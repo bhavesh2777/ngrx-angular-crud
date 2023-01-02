@@ -1,0 +1,40 @@
+<div class="w-full">
+  <!-- <div class="w-2/4 mx-auto my-4" *ngIf="addLoader">Loading...</div>
+  <div class="w-2/4 mx-auto my-4" *ngIf="!addLoader"> -->
+  <div class="w-2/4 mx-auto my-4">
+    <div class="flex items-center">
+      <a class="mr-3 underline text-xs" routerLink="/">Go back</a>
+      <div class="text-2xl font-semibold">Edit Post</div>
+    </div>
+    <div class="my-4">
+      <div>Title</div>
+      <input
+        type="text"
+        [(ngModel)]="postForm.title"
+        class="border border-solid rounded px-4 py-1"
+      />
+    </div>
+    <div class="my-4">
+      <div>Description</div>
+      <input
+        type="text"
+        [(ngModel)]="postForm.description"
+        class="border border-solid rounded px-4 py-1"
+      />
+    </div>
+    <div class="my-4">
+      <div>Likes</div>
+      <input
+        type="number"
+        [(ngModel)]="postForm.likes"
+        class="border border-solid rounded px-4 py-1"
+      />
+    </div>
+    <button
+      (click)="updatePost()"
+      class="bg-slate-800 text-white rounded py-1 px-4 text-base font-semibold"
+    >
+      Update
+    </button>
+  </div>
+</div>

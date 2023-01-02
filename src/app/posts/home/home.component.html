@@ -1,0 +1,35 @@
+<div class="w-full">
+  <div class="w-2/4 mx-auto my-4">
+    <button
+      routerLink="/add"
+      class="bg-slate-800 text-white rounded py-1 px-4 text-base font-semibold"
+    >
+      Add a new post
+    </button>
+    <div class="flex flex-col">
+      <div class="my-3" *ngFor="let post of list$ | async">
+        <div class="text-2xl font-semibold border border-solid px-4 py-1">
+          {{ post.title }}
+        </div>
+        <div class="text-base border border-solid px-4 py-1">
+          {{ post.description }}
+        </div>
+        <div class="text-base border border-solid px-4 py-1">
+          {{ post.likes }}
+        </div>
+        <div class="flex border border-solid">
+          <a
+            [routerLink]="['/edit', post.id]"
+            class="py-1 px-4 text-center w-full bg-slate-600 text-white"
+            >Edit post</a
+          >
+          <a
+            (click)="deletePost(post.id)"
+            class="cursor-pointer py-1 px-4 text-center w-full bg-red-400 text-white"
+            >Delete</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="w-full">
+  <div class="w-2/4 mx-auto my-4" *ngIf="spinner$ | async">Loading...</div>
+  <div class="w-2/4 mx-auto my-4" *ngIf="!(spinner$ | async)">
+    <!-- <div class="w-2/4 mx-auto my-4"> -->
+    <div class="flex items-center">
+      <a class="mr-3 underline text-xs" routerLink="/">Go back</a>
+      <div class="text-2xl font-semibold">Add a new Post</div>
+    </div>
+    <div class="my-4">
+      <div>Title</div>
+      <input
+        type="text"
+        [(ngModel)]="postForm.title"
+        class="border border-solid rounded px-4 py-1"
+      />
+    </div>
+    <div class="my-4">
+      <div>Description</div>
+      <input
+        type="text"
+        [(ngModel)]="postForm.description"
+        class="border border-solid rounded px-4 py-1"
+      />
+    </div>
+    <button
+      (click)="addNewPost()"
+      class="bg-slate-800 text-white rounded py-1 px-4 text-base font-semibold"
+    >
+      Add
+    </button>
+  </div>
+</div>
